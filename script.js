@@ -199,3 +199,14 @@ document.addEventListener("touchend", () => {
     paused = false;
 
 });
+
+
+
+/* STOP MUSIC WHEN LEAVING PAGE */
+
+window.addEventListener("beforeunload", () => {
+
+    music.pause();
+
+    music.currentTime = 0;
+});
