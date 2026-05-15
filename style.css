@@ -181,13 +181,18 @@ body{
     min-height:100vh;
 
     display:flex;
+
     flex-direction:column;
+
     justify-content:center;
+
     align-items:center;
 
-    padding:40px 18px 100px 18px;
+    padding:40px 18px 120px 18px;
 
     overflow:hidden;
+
+    background:black;
 }
 
 
@@ -205,7 +210,9 @@ body{
 
     height:100vh;
 
-    z-index:-3;
+    z-index:0;
+
+    background-image:url("images/mom1.png");
 
     background-size:contain;
 
@@ -233,7 +240,7 @@ body{
 
     height:100vh;
 
-    z-index:-2;
+    z-index:1;
 
     background:rgba(0,0,0,0.58);
 }
@@ -246,19 +253,22 @@ body{
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 
     width:100%;
 
     max-width:950px;
 
-    background:rgba(0,0,0,0.38);
+    background:rgba(0,0,0,0.45);
 
     padding:30px 22px;
 
     border-radius:25px;
 
-    backdrop-filter:blur(5px);
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,0.45);
 }
 
 
@@ -294,14 +304,14 @@ body{
 
     animation:bounce 1.5s infinite;
 
-    z-index:3;
+    z-index:6;
 
     text-align:center;
 }
 
 
 
-/* BOUNCE ANIMATION */
+/* BOUNCE */
 
 @keyframes bounce{
 
