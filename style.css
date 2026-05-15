@@ -216,9 +216,13 @@ body{
 
     background-size:cover;
 
-    background-position:center center;
+    background-position:center top;
 
     background-repeat:no-repeat;
+
+    background-attachment:fixed;
+
+    image-rendering:auto;
 
     transition:background-image 1.2s ease-in-out;
 }
@@ -351,6 +355,6 @@ body{
 
         background-size:cover;
 
-        background-position:center center;
+        background-position:center top;
     }
 }
