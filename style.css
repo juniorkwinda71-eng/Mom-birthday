@@ -261,16 +261,16 @@ body{
 
     max-width:950px;
 
-    background:rgba(0,0,0,0.42);
+    background:rgba(0,0,0,0.30);
 
     padding:30px 22px;
 
     border-radius:25px;
 
-    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,0.12);
 
     box-shadow:
-    0 0 30px rgba(0,0,0,0.45);
+    0 0 30px rgba(0,0,0,0.35);
 }
 
 
