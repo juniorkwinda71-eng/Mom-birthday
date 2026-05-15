@@ -188,7 +188,7 @@ body{
 
     align-items:center;
 
-    padding:40px 18px 120px 18px;
+    padding:40px 18px;
 
     overflow:hidden;
 
@@ -214,13 +214,11 @@ body{
 
     background-image:url("images/mom1.png");
 
-    background-size:contain;
+    background-size:cover;
 
     background-position:center center;
 
     background-repeat:no-repeat;
-
-    background-color:black;
 
     transition:background-image 1.2s ease-in-out;
 }
@@ -242,7 +240,7 @@ body{
 
     z-index:1;
 
-    background:rgba(0,0,0,0.58);
+    background:rgba(0,0,0,0.50);
 }
 
 
@@ -259,7 +257,7 @@ body{
 
     max-width:950px;
 
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.42);
 
     padding:30px 22px;
 
@@ -288,48 +286,6 @@ body{
 
 
 
-/* SCROLL INDICATOR */
-
-#scroll-indicator{
-
-    margin-top:30px;
-
-    color:white;
-
-    font-size:20px;
-
-    letter-spacing:2px;
-
-    opacity:0.8;
-
-    animation:bounce 1.5s infinite;
-
-    z-index:6;
-
-    text-align:center;
-}
-
-
-
-/* BOUNCE */
-
-@keyframes bounce{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(8px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-
-
 /* MOBILE FIXES */
 
 @media(max-width:768px){
@@ -349,7 +305,7 @@ body{
 
         width:100vw;
 
-        padding:20px 12px 100px 12px;
+        padding:20px 12px;
     }
 
     #title{
@@ -393,11 +349,8 @@ body{
 
     #background-slider{
 
-        background-size:contain;
-    }
+        background-size:cover;
 
-    #scroll-indicator{
-
-        font-size:18px;
+        background-position:center center;
     }
 }
