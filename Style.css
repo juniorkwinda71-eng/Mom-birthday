@@ -1,0 +1,393 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow-x:hidden;
+    font-family:Arial, sans-serif;
+    background:black;
+}
+
+
+
+/* MUSIC BUTTON */
+
+#music-btn{
+
+    position:fixed;
+
+    top:20px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:10000;
+
+    padding:14px 28px;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    background:rgba(0,0,0,0.75);
+
+    color:white;
+
+    backdrop-filter:blur(6px);
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,0.15);
+
+    transition:0.3s;
+}
+
+#music-btn:active{
+
+    transform:
+    translateX(-50%)
+    scale(0.96);
+}
+
+
+
+/* COVER PAGE */
+
+#cover-page{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100vw;
+    height:100vh;
+
+    z-index:9999;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
+    url("images/cover-bg.png");
+
+    background-size:cover;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    transition:opacity 1.5s ease;
+}
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+}
+
+.cover-content{
+
+    z-index:2;
+
+    width:100%;
+
+    padding:20px;
+}
+
+
+
+/* GOLD TITLE */
+
+#title{
+
+    font-size:clamp(50px, 10vw, 110px);
+
+    font-weight:900;
+
+    line-height:1.1;
+
+    letter-spacing:2px;
+
+    font-family:Georgia, serif;
+
+    background:
+    linear-gradient(
+    180deg,
+    #fff8dc 0%,
+    #ffe27a 15%,
+    #d4a017 35%,
+    #fff4b0 50%,
+    #c99700 65%,
+    #fff0a0 85%,
+    #fff8dc 100%
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 1px 0 #fff6b0,
+    0 2px 2px rgba(0,0,0,0.35),
+    0 4px 6px rgba(0,0,0,0.45),
+    0 0 12px rgba(255,215,0,0.45);
+}
+
+
+
+/* SUBTITLE */
+
+#subtitle{
+
+    margin-top:20px;
+
+    color:white;
+
+    font-size:clamp(20px, 4vw, 35px);
+
+    letter-spacing:1px;
+}
+
+
+
+/* PAGE 2 */
+
+#message-page{
+
+    position:relative;
+
+    width:100vw;
+
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px 18px 100px 18px;
+
+    overflow:hidden;
+}
+
+
+
+/* BACKGROUND SLIDESHOW */
+
+#background-slider{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    z-index:-3;
+
+    background-size:contain;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    background-color:black;
+
+    transition:background-image 1.2s ease-in-out;
+}
+
+
+
+/* DARK LAYER */
+
+.dark-layer{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    z-index:-2;
+
+    background:rgba(0,0,0,0.58);
+}
+
+
+
+/* MESSAGE BOX */
+
+.message-box{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:950px;
+
+    background:rgba(0,0,0,0.38);
+
+    padding:30px 22px;
+
+    border-radius:25px;
+
+    backdrop-filter:blur(5px);
+}
+
+
+
+/* MESSAGE TEXT */
+
+#message{
+
+    color:white;
+
+    font-size:clamp(21px, 4vw, 31px);
+
+    line-height:1.8;
+
+    white-space:pre-line;
+}
+
+
+
+/* SCROLL INDICATOR */
+
+#scroll-indicator{
+
+    margin-top:30px;
+
+    color:white;
+
+    font-size:20px;
+
+    letter-spacing:2px;
+
+    opacity:0.8;
+
+    animation:bounce 1.5s infinite;
+
+    z-index:3;
+
+    text-align:center;
+}
+
+
+
+/* BOUNCE ANIMATION */
+
+@keyframes bounce{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(8px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+
+
+/* MOBILE FIXES */
+
+@media(max-width:768px){
+
+    body{
+
+        overflow-x:hidden;
+    }
+
+    #cover-page{
+
+        width:100vw;
+        height:100vh;
+    }
+
+    #message-page{
+
+        width:100vw;
+
+        padding:20px 12px 100px 12px;
+    }
+
+    #title{
+
+        font-size:52px;
+
+        padding:0 10px;
+    }
+
+    #subtitle{
+
+        font-size:22px;
+    }
+
+    #message{
+
+        font-size:22px;
+
+        line-height:1.7;
+    }
+
+    .message-box{
+
+        width:100%;
+
+        padding:22px 16px;
+
+        border-radius:18px;
+    }
+
+    #music-btn{
+
+        width:90%;
+
+        max-width:320px;
+
+        font-size:16px;
+
+        padding:12px 18px;
+    }
+
+    #background-slider{
+
+        background-size:contain;
+    }
+
+    #scroll-indicator{
+
+        font-size:18px;
+    }
+}
