@@ -260,64 +260,6 @@ body{
 
 
 
-/* SWIPE HINT */
-
-#swipe-hint{
-
-    position:fixed;
-
-    bottom:18px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    z-index:10;
-
-    color:rgba(255,255,255,0.75);
-
-    font-size:15px;
-
-    letter-spacing:2px;
-
-    pointer-events:none;
-
-    animation:swipeFloat 2s infinite;
-}
-
-
-
-/* SWIPE ANIMATION */
-
-@keyframes swipeFloat{
-
-    0%{
-        transform:
-        translateX(-50%)
-        translateY(0px);
-
-        opacity:0.5;
-    }
-
-    50%{
-        transform:
-        translateX(-50%)
-        translateY(-6px);
-
-        opacity:1;
-    }
-
-    100%{
-        transform:
-        translateX(-50%)
-        translateY(0px);
-
-        opacity:0.5;
-    }
-}
-
-
-
 /* MOBILE FIXES */
 
 @media(max-width:768px){
@@ -373,12 +315,5 @@ body{
         background-size:cover;
 
         background-position:center top;
-    }
-
-    #swipe-hint{
-
-        font-size:14px;
-
-        bottom:14px;
     }
 }
