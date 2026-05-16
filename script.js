@@ -1,9 +1,15 @@
-window.onbeforeunload = function () {
-
-    window.scrollTo(0,0);
-};
+window.onload = () => {
 
 
+
+/* FORCE TOP */
+
+window.scrollTo(0,0);
+
+
+
+
+/* TEXT */
 
 const titleText = "Happy Birthday Mom ❤️";
 
@@ -23,6 +29,8 @@ From your son, Junior ❤️`;
 
 
 
+/* IMAGES */
+
 const images = [
 
     "images/mom1.png",
@@ -35,12 +43,22 @@ const images = [
 
 
 
+/* VARIABLES */
+
 let current = 0;
 
 let paused = false;
 
+
+
 const music =
 document.getElementById("bg-music");
+
+const startBtn =
+document.getElementById("start-btn");
+
+const countdown =
+document.getElementById("countdown");
 
 
 
@@ -130,14 +148,11 @@ function startSlideshow(){
 
 
 
-/* START BUTTON */
+/* BUTTON CLICK */
 
-const startBtn =
-document.getElementById("start-btn");
-
+startBtn.onclick = function(){
 
 
-startBtn.addEventListener("click", () => {
 
     music.volume = 0.4;
 
@@ -149,11 +164,6 @@ startBtn.addEventListener("click", () => {
 
 
 
-    const countdown =
-    document.getElementById("countdown");
-
-
-
     countdown.style.opacity = "1";
 
 
@@ -162,17 +172,21 @@ startBtn.addEventListener("click", () => {
 
 
 
-    /* SLOW COUNTDOWN */
-
     const counter = setInterval(() => {
 
+
+
         countdown.innerHTML = num;
+
+
 
         num++;
 
 
 
         if(num > 22){
+
+
 
             clearInterval(counter);
 
@@ -183,6 +197,8 @@ startBtn.addEventListener("click", () => {
 
 
             setTimeout(() => {
+
+
 
                 const intro =
                 document.getElementById("intro-page");
@@ -195,6 +211,8 @@ startBtn.addEventListener("click", () => {
 
                 setTimeout(() => {
 
+
+
                     intro.style.display = "none";
 
 
@@ -205,7 +223,11 @@ startBtn.addEventListener("click", () => {
 
                     setTimeout(() => {
 
-                        typeText("subtitle", subtitleText, 60);
+                        typeText(
+                            "subtitle",
+                            subtitleText,
+                            60
+                        );
 
                     }, 2000);
 
@@ -217,8 +239,12 @@ startBtn.addEventListener("click", () => {
 
                     setTimeout(() => {
 
+
+
                         const cover =
-                        document.getElementById("cover-page");
+                        document.getElementById(
+                            "cover-page"
+                        );
 
 
 
@@ -227,6 +253,8 @@ startBtn.addEventListener("click", () => {
 
 
                         setTimeout(() => {
+
+
 
                             cover.style.display = "none";
 
@@ -238,17 +266,27 @@ startBtn.addEventListener("click", () => {
                                 18
                             );
 
+
+
                         }, 1500);
+
+
 
                     }, 5000);
 
+
+
                 }, 1200);
+
+
 
             }, 1000);
         }
 
+
+
     }, 320);
-});
+};
 
 
 
@@ -259,6 +297,8 @@ document.addEventListener("touchstart", () => {
     paused = true;
 
 });
+
+
 
 document.addEventListener("touchend", () => {
 
@@ -275,4 +315,7 @@ window.addEventListener("beforeunload", () => {
     music.pause();
 
     music.currentTime = 0;
+
 });
+
+};
