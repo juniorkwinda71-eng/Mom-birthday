@@ -18,6 +18,127 @@ body{
 
 
 
+/* INTRO PAGE */
+
+#intro-page{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100vw;
+    height:100vh;
+
+    z-index:20000;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ff4fa0,
+    #ff8ac6,
+    #ffd700,
+    #ffb347
+    );
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    transition:opacity 1.2s ease;
+}
+
+.intro-overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(
+    rgba(255,255,255,0.12),
+    transparent
+    );
+}
+
+.intro-content{
+
+    position:relative;
+
+    z-index:5;
+
+    text-align:center;
+}
+
+
+
+/* START BUTTON */
+
+#start-btn{
+
+    padding:24px 55px;
+
+    border:none;
+
+    border-radius:70px;
+
+    cursor:pointer;
+
+    font-size:clamp(28px, 6vw, 52px);
+
+    font-weight:900;
+
+    letter-spacing:2px;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    180deg,
+    #ffd700,
+    #ffb300
+    );
+
+    box-shadow:
+    0 0 20px rgba(255,215,0,0.8),
+    0 0 45px rgba(255,215,0,0.5);
+
+    transition:0.3s;
+}
+
+#start-btn:active{
+
+    transform:scale(0.96);
+}
+
+
+
+/* COUNTDOWN */
+
+#countdown{
+
+    margin-top:35px;
+
+    font-size:clamp(70px, 15vw, 170px);
+
+    font-weight:900;
+
+    color:#ffd700;
+
+    opacity:0;
+
+    text-shadow:
+    0 0 15px rgba(255,215,0,0.9),
+    0 0 35px rgba(255,215,0,0.7);
+}
+
+
+
 /* COVER PAGE */
 
 #cover-page{
@@ -177,20 +298,12 @@ body{
     opacity:0;
 }
 
-
-
-/* FIRST BACKGROUND */
-
 #bg1{
 
     opacity:1;
 
     background-image:url("images/mom1.png");
 }
-
-
-
-/* SECOND BACKGROUND */
 
 #bg2{
 
@@ -245,7 +358,7 @@ body{
 
 
 
-/* MESSAGE TEXT */
+/* MESSAGE */
 
 #message{
 
@@ -260,60 +373,17 @@ body{
 
 
 
-/* MOBILE FIXES */
+/* MOBILE */
 
 @media(max-width:768px){
-
-    body{
-
-        overflow-x:hidden;
-    }
-
-    #cover-page{
-
-        width:100vw;
-        height:100vh;
-    }
-
-    #message-page{
-
-        width:100vw;
-
-        padding:20px 12px;
-    }
-
-    #title{
-
-        font-size:52px;
-
-        padding:0 10px;
-    }
-
-    #subtitle{
-
-        font-size:22px;
-    }
 
     #message{
 
         font-size:22px;
-
-        line-height:1.7;
     }
 
-    .message-box{
+    #start-btn{
 
-        width:100%;
-
-        padding:22px 16px;
-
-        border-radius:18px;
-    }
-
-    .bg-slide{
-
-        background-size:cover;
-
-        background-position:center top;
+        width:85%;
     }
 }
