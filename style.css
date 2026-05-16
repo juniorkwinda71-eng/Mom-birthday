@@ -171,7 +171,7 @@ body{
     width:100vw;
     height:100vh;
 
-    z-index:9999;
+    z-index:1000;
 
     background:
     linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)),
@@ -405,5 +405,10 @@ body{
     #start-btn{
 
         width:85%;
+    }
+
+    #countdown{
+
+        font-size:150px;
     }
 }
