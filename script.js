@@ -72,7 +72,7 @@ function typeText(elementId, text, speed){
 
 
 
-/* SMOOTH SLIDESHOW */
+/* SLIDESHOW */
 
 function startSlideshow(){
 
@@ -154,6 +154,16 @@ startBtn.addEventListener("click", () => {
 
 
 
+    const cake =
+    document.getElementById("cake");
+
+
+
+    const candles =
+    document.getElementById("candles");
+
+
+
     countdown.style.opacity = "1";
 
 
@@ -170,70 +180,95 @@ startBtn.addEventListener("click", () => {
 
 
 
+        if(num === 17){
+
+            cake.style.opacity = "1";
+
+            candles.style.opacity = "1";
+        }
+
+
+
         if(num > 22){
 
             clearInterval(counter);
 
 
 
-            const intro =
-            document.getElementById("intro-page");
+            countdown.innerHTML = "🎉";
 
 
 
-            intro.style.opacity = "0";
+            candles.classList.add("blow-out");
 
 
 
             setTimeout(() => {
 
-                intro.style.display = "none";
+                const intro =
+                document.getElementById("intro-page");
 
 
 
-                typeText("title", titleText, 90);
-
-
-
-                setTimeout(() => {
-
-                    typeText("subtitle", subtitleText, 60);
-
-                }, 2000);
-
-
-
-                startSlideshow();
+                intro.style.opacity = "0";
 
 
 
                 setTimeout(() => {
 
-                    const cover =
-                    document.getElementById("cover-page");
+                    intro.style.display = "none";
 
 
 
-                    cover.style.opacity = "0";
+                    typeText("title", titleText, 90);
 
 
 
                     setTimeout(() => {
 
-                        cover.style.display = "none";
+                        typeText("subtitle", subtitleText, 60);
+
+                    }, 2000);
 
 
 
-                        typeText("message", messageText, 18);
+                    startSlideshow();
 
-                    }, 1500);
 
-                }, 5000);
 
-            }, 1200);
+                    setTimeout(() => {
+
+                        const cover =
+                        document.getElementById("cover-page");
+
+
+
+                        cover.style.opacity = "0";
+
+
+
+                        setTimeout(() => {
+
+                            cover.style.display = "none";
+
+
+
+                            typeText(
+                                "message",
+                                messageText,
+                                18
+                            );
+
+                        }, 1500);
+
+                    }, 5000);
+
+                }, 1200);
+
+            }, 1500);
         }
 
-    }, 120);
+    }, 300);
 });
 
 
