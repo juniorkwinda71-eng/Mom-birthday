@@ -1,14 +1,9 @@
-```javascript
-/* FORCE PAGE TO TOP */
-
 window.onbeforeunload = function () {
 
     window.scrollTo(0,0);
 };
 
 
-
-/* TEXT */
 
 const titleText = "Happy Birthday Mom ❤️";
 
@@ -28,8 +23,6 @@ From your son, Junior ❤️`;
 
 
 
-/* IMAGES */
-
 const images = [
 
     "images/mom1.png",
@@ -42,8 +35,6 @@ const images = [
 
 
 
-/* VARIABLES */
-
 let current = 0;
 
 let paused = false;
@@ -53,57 +44,7 @@ document.getElementById("bg-music");
 
 
 
-/* START MUSIC ON TOUCH OR SWIPE */
-
-function startMusic(){
-
-    music.volume = 0.4;
-
-    music.play();
-
-
-
-    document.removeEventListener(
-        "touchstart",
-        startMusic
-    );
-
-    document.removeEventListener(
-        "touchmove",
-        startMusic
-    );
-
-    document.removeEventListener(
-        "scroll",
-        startMusic
-    );
-}
-
-
-
-/* START WHEN USER TOUCHES OR SWIPES */
-
-document.addEventListener(
-    "touchstart",
-    startMusic,
-    { once:true }
-);
-
-document.addEventListener(
-    "touchmove",
-    startMusic,
-    { once:true }
-);
-
-document.addEventListener(
-    "scroll",
-    startMusic,
-    { once:true }
-);
-
-
-
-/* TYPING EFFECT */
+/* TYPE EFFECT */
 
 function typeText(elementId, text, speed){
 
@@ -189,49 +130,111 @@ function startSlideshow(){
 
 
 
-/* WEBSITE START */
+/* START BUTTON */
 
-window.onload = () => {
-
-    window.scrollTo(0,0);
-
-
-
-    typeText("title", titleText, 90);
+const startBtn =
+document.getElementById("start-btn");
 
 
 
-    setTimeout(() => {
+startBtn.addEventListener("click", () => {
 
-        typeText("subtitle", subtitleText, 60);
+    music.volume = 0.4;
 
-    }, 2000);
-
-
-
-    startSlideshow();
+    music.play();
 
 
 
-    setTimeout(() => {
-
-        const cover =
-        document.getElementById("cover-page");
-
-        cover.style.opacity = "0";
+    startBtn.style.display = "none";
 
 
 
-        setTimeout(() => {
+    const countdown =
+    document.getElementById("countdown");
 
-            cover.style.display = "none";
 
-            typeText("message", messageText, 18);
 
-        }, 1500);
+    countdown.style.opacity = "1";
 
-    }, 5000);
-};
+
+
+    let num = 1;
+
+
+
+    const counter = setInterval(() => {
+
+        countdown.innerHTML = num;
+
+        num++;
+
+
+
+        if(num > 22){
+
+            clearInterval(counter);
+
+
+
+            const intro =
+            document.getElementById("intro-page");
+
+
+
+            intro.style.opacity = "0";
+
+
+
+            setTimeout(() => {
+
+                intro.style.display = "none";
+
+
+
+                typeText("title", titleText, 90);
+
+
+
+                setTimeout(() => {
+
+                    typeText("subtitle", subtitleText, 60);
+
+                }, 2000);
+
+
+
+                startSlideshow();
+
+
+
+                setTimeout(() => {
+
+                    const cover =
+                    document.getElementById("cover-page");
+
+
+
+                    cover.style.opacity = "0";
+
+
+
+                    setTimeout(() => {
+
+                        cover.style.display = "none";
+
+
+
+                        typeText("message", messageText, 18);
+
+                    }, 1500);
+
+                }, 5000);
+
+            }, 1200);
+        }
+
+    }, 120);
+});
 
 
 
@@ -251,7 +254,7 @@ document.addEventListener("touchend", () => {
 
 
 
-/* STOP MUSIC WHEN LEAVING */
+/* STOP MUSIC */
 
 window.addEventListener("beforeunload", () => {
 
@@ -259,4 +262,3 @@ window.addEventListener("beforeunload", () => {
 
     music.currentTime = 0;
 });
-```
