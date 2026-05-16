@@ -52,53 +52,15 @@ document.getElementById("bg-music");
 
 
 
-/* START MUSIC ON TOUCH OR SWIPE */
+/* START MUSIC ON FIRST TOUCH */
 
-function startMusic(){
+document.addEventListener("click", () => {
 
     music.volume = 0.4;
 
     music.play();
 
-
-
-    document.removeEventListener(
-        "touchstart",
-        startMusic
-    );
-
-    document.removeEventListener(
-        "touchmove",
-        startMusic
-    );
-
-    document.removeEventListener(
-        "scroll",
-        startMusic
-    );
-}
-
-
-
-/* START WHEN USER TOUCHES OR SWIPES */
-
-document.addEventListener(
-    "touchstart",
-    startMusic,
-    { once:true }
-);
-
-document.addEventListener(
-    "touchmove",
-    startMusic,
-    { once:true }
-);
-
-document.addEventListener(
-    "scroll",
-    startMusic,
-    { once:true }
-);
+}, { once:true });
 
 
 
