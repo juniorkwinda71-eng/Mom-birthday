@@ -154,16 +154,6 @@ startBtn.addEventListener("click", () => {
 
 
 
-    const cake =
-    document.getElementById("cake");
-
-
-
-    const candles =
-    document.getElementById("candles");
-
-
-
     countdown.style.opacity = "1";
 
 
@@ -171,6 +161,8 @@ startBtn.addEventListener("click", () => {
     let num = 1;
 
 
+
+    /* SLOW COUNTDOWN */
 
     const counter = setInterval(() => {
 
@@ -180,26 +172,13 @@ startBtn.addEventListener("click", () => {
 
 
 
-        if(num === 17){
-
-            cake.style.opacity = "1";
-
-            candles.style.opacity = "1";
-        }
-
-
-
         if(num > 22){
 
             clearInterval(counter);
 
 
 
-            countdown.innerHTML = "🎉";
-
-
-
-            candles.classList.add("blow-out");
+            countdown.innerHTML = "❤️";
 
 
 
@@ -265,10 +244,10 @@ startBtn.addEventListener("click", () => {
 
                 }, 1200);
 
-            }, 1500);
+            }, 1000);
         }
 
-    }, 300);
+    }, 320);
 });
 
 
