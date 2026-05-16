@@ -1,3 +1,4 @@
+```javascript
 /* FORCE PAGE TO TOP */
 
 window.onbeforeunload = function () {
@@ -52,15 +53,53 @@ document.getElementById("bg-music");
 
 
 
-/* START MUSIC ON FIRST TOUCH */
+/* START MUSIC ON TOUCH OR SWIPE */
 
-document.addEventListener("click", () => {
+function startMusic(){
 
     music.volume = 0.4;
 
     music.play();
 
-}, { once:true });
+
+
+    document.removeEventListener(
+        "touchstart",
+        startMusic
+    );
+
+    document.removeEventListener(
+        "touchmove",
+        startMusic
+    );
+
+    document.removeEventListener(
+        "scroll",
+        startMusic
+    );
+}
+
+
+
+/* START WHEN USER TOUCHES OR SWIPES */
+
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once:true }
+);
+
+document.addEventListener(
+    "touchmove",
+    startMusic,
+    { once:true }
+);
+
+document.addEventListener(
+    "scroll",
+    startMusic,
+    { once:true }
+);
 
 
 
@@ -220,3 +259,4 @@ window.addEventListener("beforeunload", () => {
 
     music.currentTime = 0;
 });
+```
