@@ -50,21 +50,17 @@ let paused = false;
 const music =
 document.getElementById("bg-music");
 
-const musicBtn =
-document.getElementById("music-btn");
 
 
+/* START MUSIC ON FIRST TOUCH */
 
-/* MUSIC BUTTON */
-
-musicBtn.addEventListener("click", () => {
+document.addEventListener("click", () => {
 
     music.volume = 0.4;
 
     music.play();
 
-    musicBtn.style.display = "none";
-});
+}, { once:true });
 
 
 
@@ -96,15 +92,17 @@ function typeText(elementId, text, speed){
 
 
 
-/* SLIDESHOW */
+/* SMOOTH SLIDESHOW */
 
 function startSlideshow(){
 
-    const slider =
-    document.getElementById("background-slider");
+    const bg1 =
+    document.getElementById("bg1");
 
-    slider.style.backgroundImage =
-    `url('${images[current]}')`;
+    const bg2 =
+    document.getElementById("bg2");
+
+    let showingBg1 = true;
 
 
 
@@ -119,8 +117,32 @@ function startSlideshow(){
                 current = 0;
             }
 
-            slider.style.backgroundImage =
-            `url('${images[current]}')`;
+
+
+            if(showingBg1){
+
+                bg2.style.backgroundImage =
+                `url('${images[current]}')`;
+
+                bg2.style.opacity = "1";
+
+                bg1.style.opacity = "0";
+
+            }
+
+            else{
+
+                bg1.style.backgroundImage =
+                `url('${images[current]}')`;
+
+                bg1.style.opacity = "1";
+
+                bg2.style.opacity = "0";
+            }
+
+
+
+            showingBg1 = !showingBg1;
         }
 
     }, 6000);
@@ -136,13 +158,9 @@ window.onload = () => {
 
 
 
-    /* TITLE */
-
     typeText("title", titleText, 90);
 
 
-
-    /* SUBTITLE */
 
     setTimeout(() => {
 
@@ -152,13 +170,9 @@ window.onload = () => {
 
 
 
-    /* START SLIDESHOW */
-
     startSlideshow();
 
 
-
-    /* REMOVE COVER */
 
     setTimeout(() => {
 
@@ -172,10 +186,6 @@ window.onload = () => {
         setTimeout(() => {
 
             cover.style.display = "none";
-
-
-
-            /* MESSAGE */
 
             typeText("message", messageText, 18);
 
@@ -202,7 +212,7 @@ document.addEventListener("touchend", () => {
 
 
 
-/* STOP MUSIC WHEN LEAVING PAGE */
+/* STOP MUSIC WHEN LEAVING */
 
 window.addEventListener("beforeunload", () => {
 
