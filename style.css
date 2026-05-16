@@ -77,19 +77,6 @@ body{
 
 
 
-/* TOP BALLOONS */
-
-.top-decor{
-
-    font-size:55px;
-
-    margin-bottom:25px;
-
-    animation:floatBalloon 3s ease-in-out infinite;
-}
-
-
-
 /* BUTTON */
 
 #start-btn{
@@ -135,96 +122,39 @@ body{
 
 #countdown{
 
-    margin-top:35px;
+    margin-top:45px;
 
-    font-size:clamp(70px, 15vw, 170px);
+    font-size:clamp(120px, 24vw, 260px);
 
     font-weight:900;
 
-    color:#ffd700;
+    letter-spacing:4px;
+
+    font-family:Georgia, serif;
 
     opacity:0;
+
+    background:
+    linear-gradient(
+    180deg,
+    #fff8dc 0%,
+    #ffe27a 15%,
+    #d4a017 35%,
+    #fff4b0 50%,
+    #c99700 65%,
+    #fff0a0 85%,
+    #fff8dc 100%
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
 
     text-shadow:
-    0 0 15px rgba(255,215,0,0.9),
-    0 0 35px rgba(255,215,0,0.7);
-}
-
-
-
-/* CAKE */
-
-#cake{
-
-    margin-top:25px;
-
-    font-size:85px;
-
-    opacity:0;
-
-    transition:1s;
-}
-
-
-
-/* CANDLES */
-
-#candles{
-
-    margin-top:10px;
-
-    font-size:45px;
-
-    opacity:0;
-
-    transition:1s;
-}
-
-
-
-/* BALLOON FLOAT */
-
-@keyframes floatBalloon{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-}
-
-
-
-/* CANDLE EFFECT */
-
-.blow-out{
-
-    animation:blowOut 1.5s forwards;
-}
-
-
-
-@keyframes blowOut{
-
-    0%{
-
-        opacity:1;
-
-        filter:brightness(1);
-    }
-
-    100%{
-
-        opacity:0.2;
-
-        filter:brightness(0.4);
-    }
+    0 0 12px rgba(255,215,0,0.9),
+    0 0 25px rgba(255,215,0,0.7),
+    0 0 45px rgba(255,215,0,0.6),
+    0 0 65px rgba(255,215,0,0.4);
 }
 
 
