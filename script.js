@@ -245,7 +245,7 @@ startBtn.addEventListener("click", () => {
             }, 1000);
         }
 
-    }, 120);
+    }, 320);
 });
 
 
