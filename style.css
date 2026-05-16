@@ -77,7 +77,20 @@ body{
 
 
 
-/* START BUTTON */
+/* TOP BALLOONS */
+
+.top-decor{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+    animation:floatBalloon 3s ease-in-out infinite;
+}
+
+
+
+/* BUTTON */
 
 #start-btn{
 
@@ -135,6 +148,83 @@ body{
     text-shadow:
     0 0 15px rgba(255,215,0,0.9),
     0 0 35px rgba(255,215,0,0.7);
+}
+
+
+
+/* CAKE */
+
+#cake{
+
+    margin-top:25px;
+
+    font-size:85px;
+
+    opacity:0;
+
+    transition:1s;
+}
+
+
+
+/* CANDLES */
+
+#candles{
+
+    margin-top:10px;
+
+    font-size:45px;
+
+    opacity:0;
+
+    transition:1s;
+}
+
+
+
+/* BALLOON FLOAT */
+
+@keyframes floatBalloon{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+
+
+/* CANDLE EFFECT */
+
+.blow-out{
+
+    animation:blowOut 1.5s forwards;
+}
+
+
+
+@keyframes blowOut{
+
+    0%{
+
+        opacity:1;
+
+        filter:brightness(1);
+    }
+
+    100%{
+
+        opacity:0.2;
+
+        filter:brightness(0.4);
+    }
 }
 
 
