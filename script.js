@@ -170,7 +170,7 @@ startBtn.addEventListener("click", () => {
 
 
 
-        if(num > 23){
+        if(num > 37){
 
             clearInterval(counter);
 
