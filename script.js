@@ -1,15 +1,9 @@
-window.onload = () => {
+window.onbeforeunload = function () {
+
+    window.scrollTo(0,0);
+};
 
 
-
-/* FORCE TOP */
-
-window.scrollTo(0,0);
-
-
-
-
-/* TEXT */
 
 const titleText = "Happy Birthday Mom ❤️";
 
@@ -29,8 +23,6 @@ From your son, Junior ❤️`;
 
 
 
-/* IMAGES */
-
 const images = [
 
     "images/mom1.png",
@@ -43,22 +35,12 @@ const images = [
 
 
 
-/* VARIABLES */
-
 let current = 0;
 
 let paused = false;
 
-
-
 const music =
 document.getElementById("bg-music");
-
-const startBtn =
-document.getElementById("start-btn");
-
-const countdown =
-document.getElementById("countdown");
 
 
 
@@ -148,11 +130,14 @@ function startSlideshow(){
 
 
 
-/* BUTTON CLICK */
+/* START BUTTON */
 
-startBtn.onclick = function(){
+const startBtn =
+document.getElementById("start-btn");
 
 
+
+startBtn.addEventListener("click", () => {
 
     music.volume = 0.4;
 
@@ -161,6 +146,11 @@ startBtn.onclick = function(){
 
 
     startBtn.style.display = "none";
+
+
+
+    const countdown =
+    document.getElementById("countdown");
 
 
 
@@ -174,19 +164,13 @@ startBtn.onclick = function(){
 
     const counter = setInterval(() => {
 
-
-
         countdown.innerHTML = num;
-
-
 
         num++;
 
 
 
         if(num > 22){
-
-
 
             clearInterval(counter);
 
@@ -197,8 +181,6 @@ startBtn.onclick = function(){
 
 
             setTimeout(() => {
-
-
 
                 const intro =
                 document.getElementById("intro-page");
@@ -211,8 +193,6 @@ startBtn.onclick = function(){
 
                 setTimeout(() => {
 
-
-
                     intro.style.display = "none";
 
 
@@ -223,11 +203,7 @@ startBtn.onclick = function(){
 
                     setTimeout(() => {
 
-                        typeText(
-                            "subtitle",
-                            subtitleText,
-                            60
-                        );
+                        typeText("subtitle", subtitleText, 60);
 
                     }, 2000);
 
@@ -239,12 +215,8 @@ startBtn.onclick = function(){
 
                     setTimeout(() => {
 
-
-
                         const cover =
-                        document.getElementById(
-                            "cover-page"
-                        );
+                        document.getElementById("cover-page");
 
 
 
@@ -253,8 +225,6 @@ startBtn.onclick = function(){
 
 
                         setTimeout(() => {
-
-
 
                             cover.style.display = "none";
 
@@ -266,27 +236,17 @@ startBtn.onclick = function(){
                                 18
                             );
 
-
-
                         }, 1500);
-
-
 
                     }, 5000);
 
-
-
                 }, 1200);
-
-
 
             }, 1000);
         }
 
-
-
-    }, 320);
-};
+    }, 120);
+});
 
 
 
@@ -297,8 +257,6 @@ document.addEventListener("touchstart", () => {
     paused = true;
 
 });
-
-
 
 document.addEventListener("touchend", () => {
 
@@ -315,7 +273,4 @@ window.addEventListener("beforeunload", () => {
     music.pause();
 
     music.currentTime = 0;
-
 });
-
-};
