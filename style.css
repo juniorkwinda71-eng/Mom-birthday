@@ -293,11 +293,11 @@ body{
 
     flex-direction:column;
 
-    justify-content:center;
+    justify-content:flex-start;
 
     align-items:center;
 
-    padding:40px 18px;
+    padding:0 18px 40px;
 
     overflow:hidden;
 
@@ -323,7 +323,7 @@ body{
 
     background-size:cover;
 
-    background-position:center top;
+    background-position:center center;
 
     background-repeat:no-repeat;
 
@@ -361,7 +361,7 @@ body{
 
     z-index:1;
 
-    background:rgba(0,0,0,0.45);
+    background:rgba(0,0,0,0.28);
 }
 
 
@@ -374,20 +374,24 @@ body{
 
     z-index:5;
 
-    width:100%;
+    width:92%;
 
-    max-width:950px;
+    max-width:760px;
 
-    background:rgba(0,0,0,0.25);
+    margin-top:55vh;
 
-    padding:30px 22px;
+    margin-bottom:10vh;
 
-    border-radius:25px;
+    background:rgba(255,255,255,0.05);
 
-    border:1px solid rgba(255,255,255,0.12);
+    padding:22px 18px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,0.10);
 
     box-shadow:
-    0 0 30px rgba(0,0,0,0.35);
+    0 0 18px rgba(0,0,0,0.15);
 }
 
 
@@ -403,6 +407,9 @@ body{
     line-height:1.8;
 
     white-space:pre-line;
+
+    text-shadow:
+    0 0 8px rgba(0,0,0,0.55);
 }
 
 
@@ -424,5 +431,10 @@ body{
     #countdown{
 
         font-size:180px;
+    }
+
+    .message-box{
+
+        margin-top:58vh;
     }
 }
