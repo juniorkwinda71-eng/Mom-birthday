@@ -177,7 +177,7 @@ startBtn.onclick = function(){
 
 
 
-        if(num > 23){
+        if(num > 37){
 
 
 
