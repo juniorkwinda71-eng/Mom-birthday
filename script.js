@@ -55,6 +55,8 @@ document.getElementById("countdown");
 
 
 
+/* TYPE EFFECT */
+
 function typeText(elementId, text, speed){
 
     let i = 0;
@@ -175,7 +177,7 @@ startBtn.onclick = function(){
 
 
 
-        if(num > 37){
+        if(num > 23){
 
 
 
@@ -301,12 +303,37 @@ document.addEventListener("touchend", () => {
 
 /* STOP MUSIC */
 
-window.addEventListener("beforeunload", () => {
+function stopMusic(){
 
     music.pause();
 
     music.currentTime = 0;
+}
 
+
+
+/* REFRESH */
+
+window.addEventListener("beforeunload", stopMusic);
+
+
+
+/* SWITCH TAB */
+
+document.addEventListener("visibilitychange", () => {
+
+    if(document.hidden){
+
+        stopMusic();
+    }
 });
+
+
+
+/* CLOSE WEBSITE */
+
+window.addEventListener("pagehide", stopMusic);
+
+
 
 };
