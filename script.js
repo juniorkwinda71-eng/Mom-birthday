@@ -11,13 +11,17 @@ const subtitleText = "By your son Junior ❤️";
 
 const messageText = `Happy Birthday Mom 🎉❤️🌹
 
-Today is not just the celebration of your birth, but the celebration of the strongest woman I know 💪❤️ You carried pain with strength, faced struggles with courage, and still managed to give love with the purest heart 🤍 Everything good in me comes from you. Your sacrifices, your prayers 🙏, your sleepless nights, and your endless support built the person I am becoming today 🌟
+const messageText = `Happy Birthday Mom 🎉❤️🌹
 
-No words can truly explain how much you mean to me 🥺❤️ You are my protector 🛡️, my teacher 📚, my safe place 🏡, and my biggest blessing ✨ Even when life becomes hard, your love gives me strength to keep going 💯 I thank God every day for giving me a mother like you 🙏❤️
+Today we celebrate not only your birthday, but the incredible woman you are 💪❤️ Thank you for every sacrifice, every prayer 🙏, every sleepless night, and every moment of love you gave me. Everything good in my life started with you 🌟
 
-I promise to make you proud one day 🌍🏆 and give you the life you deserve after everything you have done for me 💐 You deserve happiness 😊, peace 🕊️, love ❤️, and every beautiful thing this world can offer 🌸✨
+You are my protector 🛡️, my teacher 📚, my safe place 🏡, and my greatest blessing ✨ Your strength inspires me every single day, and your love gives me courage to keep going no matter how hard life gets ❤️
 
-May this birthday bring you joy 🎂, long life 🌹, good health 💖, and endless blessings 🙏✨ I love you more than words can ever explain ❤️
+I promise to make you proud one day 🌍🏆 and give you the happiness and peace you truly deserve 💐
+
+May God bless you with long life 🌹, good health 💖, endless joy 😊, and beautiful memories ✨
+
+I love you more than words can explain ❤️
 
 From your son, Junior ❤️`;
 
