@@ -1,7 +1,8 @@
-window.onbeforeunload = function () {
+window.onload = function(){
 
-    window.scrollTo(0,0);
-};
+
+
+window.scrollTo(0,0);
 
 
 
@@ -41,12 +42,18 @@ let current = 0;
 
 let paused = false;
 
+
+
 const music =
 document.getElementById("bg-music");
 
+const startBtn =
+document.getElementById("start-btn");
+
+const countdown =
+document.getElementById("countdown");
 
 
-/* TYPE EFFECT */
 
 function typeText(elementId, text, speed){
 
@@ -132,14 +139,11 @@ function startSlideshow(){
 
 
 
-/* START BUTTON */
+/* BUTTON */
 
-const startBtn =
-document.getElementById("start-btn");
-
+startBtn.onclick = function(){
 
 
-startBtn.addEventListener("click", () => {
 
     music.volume = 0.4;
 
@@ -148,11 +152,6 @@ startBtn.addEventListener("click", () => {
 
 
     startBtn.style.display = "none";
-
-
-
-    const countdown =
-    document.getElementById("countdown");
 
 
 
@@ -166,13 +165,19 @@ startBtn.addEventListener("click", () => {
 
     const counter = setInterval(() => {
 
+
+
         countdown.innerHTML = num;
+
+
 
         num++;
 
 
 
         if(num > 23){
+
+
 
             clearInterval(counter);
 
@@ -183,6 +188,8 @@ startBtn.addEventListener("click", () => {
 
 
             setTimeout(() => {
+
+
 
                 const intro =
                 document.getElementById("intro-page");
@@ -195,6 +202,8 @@ startBtn.addEventListener("click", () => {
 
                 setTimeout(() => {
 
+
+
                     intro.style.display = "none";
 
 
@@ -205,7 +214,11 @@ startBtn.addEventListener("click", () => {
 
                     setTimeout(() => {
 
-                        typeText("subtitle", subtitleText, 60);
+                        typeText(
+                            "subtitle",
+                            subtitleText,
+                            60
+                        );
 
                     }, 2000);
 
@@ -217,8 +230,12 @@ startBtn.addEventListener("click", () => {
 
                     setTimeout(() => {
 
+
+
                         const cover =
-                        document.getElementById("cover-page");
+                        document.getElementById(
+                            "cover-page"
+                        );
 
 
 
@@ -227,6 +244,8 @@ startBtn.addEventListener("click", () => {
 
 
                         setTimeout(() => {
+
+
 
                             cover.style.display = "none";
 
@@ -238,17 +257,27 @@ startBtn.addEventListener("click", () => {
                                 18
                             );
 
+
+
                         }, 1500);
+
+
 
                     }, 5000);
 
+
+
                 }, 1200);
+
+
 
             }, 1000);
         }
 
+
+
     }, 320);
-});
+};
 
 
 
@@ -259,6 +288,8 @@ document.addEventListener("touchstart", () => {
     paused = true;
 
 });
+
+
 
 document.addEventListener("touchend", () => {
 
@@ -275,4 +306,7 @@ window.addEventListener("beforeunload", () => {
     music.pause();
 
     music.currentTime = 0;
+
 });
+
+};
