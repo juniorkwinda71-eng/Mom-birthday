@@ -11,8 +11,6 @@ const subtitleText = "By your son Junior ❤️";
 
 const messageText = `Happy Birthday Mom 🎉❤️🌹
 
-const messageText = `Happy Birthday Mom 🎉❤️🌹
-
 Today we celebrate not only your birthday, but the incredible woman you are 💪❤️ Thank you for every sacrifice, every prayer 🙏, every sleepless night, and every moment of love you gave me. Everything good in my life started with you 🌟
 
 You are my protector 🛡️, my teacher 📚, my safe place 🏡, and my greatest blessing ✨ Your strength inspires me every single day, and your love gives me courage to keep going no matter how hard life gets ❤️
@@ -174,7 +172,7 @@ startBtn.addEventListener("click", () => {
 
 
 
-        if(num > 37){
+        if(num > 23){
 
             clearInterval(counter);
 
